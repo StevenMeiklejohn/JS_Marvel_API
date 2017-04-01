@@ -1,9 +1,10 @@
 
 var app = function(){
- getRandomComic();
+    defineHtmlStuff();
 };
 
 function getRandomComic(){
+    var button = document.getElementById('#start-button');
     // keys for API
     var PRIV_KEY = "403c5f3406be455684061d92266dea467b382bdc";
     var API_KEY = "1a11ffc2c79394bdd4e7a7b8d97c43a9";
@@ -43,7 +44,7 @@ var defineHtmlStuff = function(){
 
     startButton.onclick = function(){
         console.log("startButton clicked");
-        makeRequest(url, requestComplete);
+        getRandomComic();
     }
 };
 
@@ -80,7 +81,14 @@ var displayImage = function(image){
 
     document.getElementById('image').innerHTML = "<img src=" + image.path + ".jpg />";
 
+};
+
+var handleButtonClick = function(){
+    console.log("handle button click triggered");
+    getRandomComic();
 }
+
+
 
 
 window.onload = app;
