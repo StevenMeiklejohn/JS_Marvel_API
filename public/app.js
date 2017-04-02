@@ -44,7 +44,7 @@ var defineHtmlStuff = function(){
 
     startButton.onclick = function(){
         console.log("startButton clicked");
-        getRandomComic();
+        getRandomComic()
     }
 };
 
@@ -71,17 +71,35 @@ var requestComplete = function(){
     console.log(jsonString);
     console.log(marvel);
     console.log(marvel.data.results[0].thumbnail);
+    console.log(marvel.data.results[0].title);
+    console.log(marvel.data.results[0].creators.items[0]["name"]);
+    console.log(marvel.data.results[0].creators.items[0]["role"]);
     displayImage(marvel.data.results[0].thumbnail);
+    displayTitle(marvel.data.results[0].title);
+    displayCreators(marvel.data.results[0].creators);
 };
 
 
 
 var displayImage = function(image){
-    console.log(image.path);
-
     document.getElementById('image').innerHTML = "<img src=" + image.path + ".jpg />";
-
 };
+
+var displayTitle = function(title){
+    document.getElementById('comic-title').innerHTML = "<p>" + title + "</p>";
+};
+
+var displayCreators = function(creators){
+    var creator_info = document.getElementById('creators');
+    var items = creators.items;
+
+    for (item of items){
+        var p = document.createElement("p");
+        p.innerHTML = "<p> Name: " + item["name"] + "  Role: " + item["role"] + "</p>";
+        creator_info.appendChild(p);
+    };
+};
+
 
 var handleButtonClick = function(){
     console.log("handle button click triggered");
