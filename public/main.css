@@ -19,21 +19,21 @@
 h2{
   font-family: "Marvel", Times, serif;
   color: white;
-  font-size: 40px;
+  font-size: 50px;
   text-align: center;
 }
 
 body{
   font-family: "Marvel", Times, serif;
   color: white;
-  font-size: :40px;
+  font-size: :50px;
   background-color: #e23636;
 }
 
 ul {
   font-family: "Marvel", Times, serif;
   color: white;
-  font-size: :40px;
+  font-size: :50px;
   background-color: #e23636;
   text-align: center;
 }
@@ -41,7 +41,7 @@ ul {
 p{
   font-family: "Marvel", Times, serif;
   color: white;
-  font-size: :40px;
+  font-size: :50px;
   background-color: #e23636;
   text-align: center;
 }

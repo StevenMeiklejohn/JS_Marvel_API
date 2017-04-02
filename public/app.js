@@ -91,6 +91,7 @@ var displayTitle = function(title){
 
 var displayCreators = function(creators){
     var creator_info = document.getElementById('creators');
+    document.getElementById('creators').innerHTML = "";
     var items = creators.items;
 
     for (item of items){
